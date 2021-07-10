@@ -17,15 +17,15 @@ public class Prototype : MonoBehaviour
     IEnumerator Respawn()
     {
         raX = Random.Range(-3, 3);
-        GameObject cubeLife = CrearCubo.Clone(new Vector3(raX, 2, 1));
+        GameObject cube = CrearCubo.Clone(new Vector3(raX, 2, 1));
         
 
-        cubeLife.transform.SetParent(gameObject.transform);
+        cube.transform.SetParent(gameObject.transform);
 
         yield return new WaitForSeconds(timeRespawn);
 
      
-        Destroy(cubeLife, 2);
+        Destroy(cube, 2);
         StartCoroutine(Respawn());
     }
 }
